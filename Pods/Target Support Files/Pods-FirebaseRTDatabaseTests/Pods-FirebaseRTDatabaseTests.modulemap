@@ -1,0 +1,6 @@
+framework module Pods_FirebaseRTDatabaseTests {
+  umbrella header "Pods-FirebaseRTDatabaseTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
