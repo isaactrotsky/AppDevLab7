@@ -8,36 +8,45 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 
 class MasterViewController: UIViewController {
 
-//    fileprivate var locationTableViewController: LocationTableViewController?
-//    fileprivate var mapViewController: MapViewController?
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        // Do any additional setup after loading the view.
-//
-//        guard let locationController = childViewControllers.first as? LocationTableViewController else  {
-//            fatalError("Check storyboard for missing LocationTableViewController")
-//        }
-//
-//        guard let mapController = childViewControllers.last as? MapViewController else {
-//            fatalError("Check storyboard for missing MapViewController")
-//        }
-//
-//        locationTableViewController = locationController
-//        mapViewController = mapController
-//        locationController.delegate = self
-//    }
+
+    var tacoRoot : DatabaseReference?
+    var tacoStands = [TacoStand]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        Database.database().isPersistenceEnabled = true
+        tacoRoot = Database.database().reference(withPath: "TacoStands")
+
+        
+        setRetrieveCallback()
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    func setRetrieveCallback() {
+        tacoRoot?.queryOrdered(byChild: "TacoStands").observe(.value, with:
+            { snapshot in
+                
+                var newStands = [TacoStand]()
+                
+                for item in snapshot.children {
+                    newStands.append(TacoStand(snapshot: item as! DataSnapshot))
+                }
+                
+                self.tacoStands = newStands
+        })
+    }
 
     
     // MARK: - Navigation

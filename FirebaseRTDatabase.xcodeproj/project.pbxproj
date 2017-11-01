@@ -21,6 +21,8 @@
 		2732D634104E1C3EB1DC61C2 /* Pods_FirebaseRTDatabaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E70CD2736FB6A5F7BFAF5274 /* Pods_FirebaseRTDatabaseTests.framework */; };
 		7474849DFB43CD46DD638D20 /* Pods_FirebaseRTDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E0FBF110FAE9579513827AE /* Pods_FirebaseRTDatabase.framework */; };
 		83DEC226E2048929B6DB9218 /* Pods_FirebaseRTDatabaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978EED88422B7C4AC32611E0 /* Pods_FirebaseRTDatabaseUITests.framework */; };
+		C9C9E1BE1FAA392E001DE151 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C9E1BD1FAA392E001DE151 /* MapViewController.swift */; };
+		C9C9E1C01FAA3BBD001DE151 /* AnnotationTacoStand.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C9E1BF1FAA3BBD001DE151 /* AnnotationTacoStand.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		978EED88422B7C4AC32611E0 /* Pods_FirebaseRTDatabaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseRTDatabaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A823ECE8FFDA75A035CC2AEF /* Pods-FirebaseRTDatabaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseRTDatabaseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseRTDatabaseTests/Pods-FirebaseRTDatabaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		C900D8A463FA90F998BE4406 /* Pods-FirebaseRTDatabaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseRTDatabaseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseRTDatabaseTests/Pods-FirebaseRTDatabaseTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C9C9E1BD1FAA392E001DE151 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		C9C9E1BF1FAA3BBD001DE151 /* AnnotationTacoStand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationTacoStand.swift; sourceTree = "<group>"; };
 		E70CD2736FB6A5F7BFAF5274 /* Pods_FirebaseRTDatabaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseRTDatabaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0DC99B169A234AA75D2DCC /* Pods-FirebaseRTDatabase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseRTDatabase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseRTDatabase/Pods-FirebaseRTDatabase.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,9 +127,11 @@
 			isa = PBXGroup;
 			children = (
 				113B41A71F8C5DDF00F0171E /* Main.storyboard */,
+				C9C9E1BF1FAA3BBD001DE151 /* AnnotationTacoStand.swift */,
 				113B41A51F8C5DDF00F0171E /* TacoStand.swift */,
 				099D58311FA9A0F60066B76A /* MasterViewController.swift */,
 				113B41A31F8C5DDF00F0171E /* TacoStandTVC.swift */,
+				C9C9E1BD1FAA392E001DE151 /* MapViewController.swift */,
 				113B41A41F8C5DDF00F0171E /* TacoStandTVCell.swift */,
 				113B41751F8C5BE300F0171E /* AppDelegate.swift */,
 				113B417C1F8C5BE300F0171E /* Assets.xcassets */,
@@ -476,10 +482,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				099D58321FA9A0F60066B76A /* MasterViewController.swift in Sources */,
+				C9C9E1BE1FAA392E001DE151 /* MapViewController.swift in Sources */,
 				113B41761F8C5BE300F0171E /* AppDelegate.swift in Sources */,
 				113B41A91F8C5DDF00F0171E /* TacoStandTVCell.swift in Sources */,
 				113B41A81F8C5DDF00F0171E /* TacoStandTVC.swift in Sources */,
 				113B41AA1F8C5DDF00F0171E /* TacoStand.swift in Sources */,
+				C9C9E1C01FAA3BBD001DE151 /* AnnotationTacoStand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

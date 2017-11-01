@@ -7,45 +7,45 @@
 //
 
 import UIKit
-import Firebase
+
 
 class TacoStandTVC: UITableViewController {
     
     // You can combine this with the init but not in the 1st VC
-    var tacoRoot : DatabaseReference?
-    
-    var tacoStands = [TacoStand]()
+//    var tacoRoot : DatabaseReference?
+//
+//    var tacoStands = [TacoStand]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // This must precede getting the database reference
-        Database.database().isPersistenceEnabled = true
-        
-        tacoRoot = Database.database().reference(withPath: "TacoStands")
+//        Database.database().isPersistenceEnabled = true
+//
+//        tacoRoot = Database.database().reference(withPath: "TacoStands")
  
         //self.navigationItem.leftBarButtonItem = self.editButtonItem
         
         //let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         //self.navigationItem.rightBarButtonItem = addButton
         
-        setRetrieveCallback()
+//        setRetrieveCallback()
     }
     
-    func setRetrieveCallback() {
-        tacoRoot?.queryOrdered(byChild: "TacoStands").observe(.value, with:
-            { snapshot in
-            
-            var newStands = [TacoStand]()
-            
-            for item in snapshot.children {
-                newStands.append(TacoStand(snapshot: item as! DataSnapshot))
-            }
-            
-            self.tacoStands = newStands
-            self.tableView.reloadData()
-        })
-    }
+//    func setRetrieveCallback() {
+//        tacoRoot?.queryOrdered(byChild: "TacoStands").observe(.value, with:
+//            { snapshot in
+//            
+//            var newStands = [TacoStand]()
+//            
+//            for item in snapshot.children {
+//                newStands.append(TacoStand(snapshot: item as! DataSnapshot))
+//            }
+//            
+//            self.tacoStands = newStands
+//            self.tableView.reloadData()
+//        })
+//    }
     
    /* @objc func insertNewObject(_ sender: Any) {
         performSegue(withIdentifier: "addTacoStand", sender: nil)
