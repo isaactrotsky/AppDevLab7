@@ -23,10 +23,10 @@ class MasterViewController: UIViewController {
         // Do any additional setup after loading the view.
         Database.database().isPersistenceEnabled = true
         tacoRoot = Database.database().reference(withPath: "TacoStands")
-
         
+        //collect the data
         setRetrieveCallback()
-        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +45,14 @@ class MasterViewController: UIViewController {
                 }
                 
                 self.tacoStands = newStands
+                
+                self.dataRecivedCallSegue()
         })
+    }
+    
+    func dataRecivedCallSegue() {
+        performSegue(withIdentifier: "mapView", sender: self)
+        performSegue(withIdentifier: "tacoTableView", sender: self)
     }
 
     
@@ -55,7 +62,21 @@ class MasterViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if(segue.identifier == "mapView") {
+            if let destinationVC = segue.destination as? MapViewController {
+                destinationVC.tacoStands = tacoStands
+            }
+        }
+        if(segue.identifier == "tacoTableView") {
+            if let destinationVC = segue.destination as? TacoStandTVC {
+                destinationVC.tacoStands = tacoStands
+            }
+        }
     }
     
-
+    //prevent the view controller from seguing before the data has been recived
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        return false
+    }
+    
 }

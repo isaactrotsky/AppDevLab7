@@ -13,6 +13,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     @IBOutlet weak var map: MKMapView!
     
+    var tacoStands = [TacoStand]()
     var tacoStandAnnotations = [AnnotationTacoStand]()
     
     
@@ -22,6 +23,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         // Do any additional setup after loading the view.
         
         gatherTacoStandAnnotations()
+        
         placeAnnotations()
         
     }
@@ -32,6 +34,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     func placeAnnotations() {
+        print("First")
+        map.showAnnotations(tacoStandAnnotations, animated: true);
+        print("Secound")
         map.addAnnotations(tacoStandAnnotations)
     }
     
@@ -40,6 +45,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             let tsAnnotation = AnnotationTacoStand(coord: item.coordinate, name: item.name, speciality: item.specialty)
             tacoStandAnnotations.append(tsAnnotation)
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let pinView = MKPinAnnotationView()
+        pinView.canShowCallout = true;
+        print("In map view")
+        return pinView
     }
     
 

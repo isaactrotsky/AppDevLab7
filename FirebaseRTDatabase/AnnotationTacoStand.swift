@@ -15,10 +15,16 @@ class AnnotationTacoStand : NSObject, MKAnnotation {
     var name : String?
     var speciality: String?
     
+    var title: String?
+    var subtitle: String?
+    
     init(coord: CLLocationCoordinate2D, name: String, speciality: String) {
         coordinate = coord
         self.name = name
         self.speciality = speciality
+        self.title = name
+        self.subtitle = speciality
+
         
         super.init()
     }

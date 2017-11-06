@@ -14,7 +14,7 @@ class TacoStandTVC: UITableViewController {
     // You can combine this with the init but not in the 1st VC
 //    var tacoRoot : DatabaseReference?
 //
-//    var tacoStands = [TacoStand]()
+    var tacoStands = [TacoStand]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
